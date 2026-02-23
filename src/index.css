@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #13ec5b;
+  --color-primary-content: #003811;
+  --color-background-light: #f6f8f6;
+  --color-background-dark: #102216;
+  --color-surface-dark: #1c2e22;
+  --color-surface-highlight: #28392e;
+  
+  --font-display: "Plus Jakarta Sans", sans-serif;
+}
+
+html {
+  /* Fluid typography: 14px min, scales with viewport, 18px max on mobile/tablet */
+  font-size: clamp(14px, 1vw + 12px, 18px);
+}
+
+@media (min-width: 1024px) {
+  html {
+    /* Larger scale for desktop */
+    font-size: clamp(16px, 0.8vw + 12px, 22px);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .font-variation-settings-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+}
+
+body {
+  font-family: var(--font-display);
+}
