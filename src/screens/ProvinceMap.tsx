@@ -95,6 +95,9 @@ export default function ProvinceMap({ provinces, selectedProvince, onSelectProvi
       const dataUrl = await toPng(shareCardRef.current, {
         cacheBust: true,
         pixelRatio: 2,
+        quality: 1,
+        backgroundColor: 'transparent',
+        skipAutoScale: true,
       });
       const link = document.createElement('a');
       link.download = `thailand-journey-${new Date().getTime()}.png`;
