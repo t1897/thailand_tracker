@@ -262,9 +262,13 @@ app.get('/api/auth/user', requireAuth, async (req: express.Request, res: express
 });
 
 // =============================================
-// START SERVER
+// START SERVER OR EXPORT FOR VERCEL
 // =============================================
 
-app.listen(PORT, () => {
-    console.log(`🚀 Thailand Tracker API server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Thailand Tracker API server running on http://localhost:${PORT}`);
+    });
+}
+
+export default app;

@@ -305,7 +305,7 @@ export default function ProvinceMap({ provinces, selectedProvince, onSelectProvi
   return (
     <div className="flex flex-col h-full relative bg-background-dark overflow-hidden">
       {/* Header Overlay */}
-      <header className="absolute top-0 left-0 right-0 z-20 px-4 pt-12 pb-4 bg-gradient-to-b from-background-dark via-background-dark/80 to-transparent pointer-events-none">
+      <header className="absolute top-0 left-0 right-0 z-20 px-4 pt-[calc(1rem+env(safe-area-inset-top))] pb-4 bg-gradient-to-b from-background-dark via-background-dark/80 to-transparent pointer-events-none">
         <div className="flex items-center justify-between gap-4 pointer-events-auto">
           <div className="flex-1 h-12 bg-surface-dark/90 backdrop-blur-md rounded-full border border-surface-highlight flex items-center px-4 shadow-lg focus-within:ring-2 focus-within:ring-primary/50 transition-shadow">
             <span className="material-symbols-outlined text-slate-400">search</span>
